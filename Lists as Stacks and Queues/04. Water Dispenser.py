@@ -31,3 +31,25 @@ while True:
             amount_of_water -= person_liters
         else:
             print(f"{person} must wait")
+# from collections import deque
+#
+# liters = int(input())
+#
+# name = input()
+# queue = deque()
+#
+#
+# command = input()
+# while not name == "Start":
+#     if command.startswith("refill"):
+#         liters += int(command.split()[-1])
+#     else:
+#         liters_wanted = int(command)
+#         name = queue.popleft()
+#         if liters >= liters_wanted:
+#             liters -= liters_wanted
+#             print(f"{name} got water")
+#         else:
+#             print(f"{name} must wait")
+#     queue.append(name)
+#     name = input()

@@ -1,12 +1,7 @@
-string = input()
+word = input().split()
+result = []
 
-stack = []
+while len(word) > 0 :
+    result.append(word.pop())
 
-for ch in string:
-    stack.append(ch)
-
-result = ""
-
-while stack:
-    result += stack.pop()
-print(result)
+print(" ".join(result))
