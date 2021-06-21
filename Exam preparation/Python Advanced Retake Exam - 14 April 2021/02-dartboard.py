@@ -1,5 +1,3 @@
-import pprint
-
 player_one = 501
 player_two = 501
 player_one_name, player_two_name = input().split(", ")
@@ -20,15 +18,19 @@ while player_one > 0 and player_two > 0:
     if "-" in coordinates:
         if round % 2 == 0:
             player_one_tries += 1
+            round += 1
         else:
             player_two_tries += 1
+            round += 1
         continue
-    x, y = int(coordinates[1]), int(coordinates[4])
+    x, y = [int(el) for el in coordinates[1:-1].split(", ")]
     if x >= 7 or y >= 7 or x < 0 or y < 0:
         if round % 2 == 0:
             player_one_tries += 1
+            round += 1
         else:
             player_two_tries += 1
+            round += 1
         continue
     if round % 2 == 0:
         player_one_tries += 1
@@ -67,7 +69,7 @@ while player_one > 0 and player_two > 0:
             player_two -= player_two_current_score
             player_two_current_score = 0
     round += 1
-# pprint.pprint(matrix)
+
 
 if player_one <= 0:
     print(f"{player_one_name} won the game with {player_one_tries} throws!")
