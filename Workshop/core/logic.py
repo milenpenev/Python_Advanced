@@ -1,5 +1,5 @@
 from Workshop.core.validators import is_position_in_range, is_place_available
-from Workshop.core.helpers import get_row_col, print_current_board_state
+from Workshop.core.helpers import get_row_col, print_current_board_state, is_winner
 
 
 def play(players, board, turns):
@@ -13,7 +13,9 @@ def play(players, board, turns):
                 row, col = get_row_col(position)
                 board[row][col] = players[current_player_name]
                 print_current_board_state(board)
-
+                if is_winner(board):
+                    print(f"{current_player_name} wins!")
+                    exit(0)
             # check if there is a winner
             # check if there is no winner if the board is full
         else:
