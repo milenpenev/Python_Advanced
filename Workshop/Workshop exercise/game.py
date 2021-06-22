@@ -32,9 +32,9 @@ def get_positions_in_directions(board, last_position, direction):
     for _ in range(3):
         current_row += move_by_row
         current_col += move_by_col
-        if 0 <= current_row < len(board):
+        if not 0 <= current_row < len(board):
             return positions
-        elif 0 <= current_col < len(board[current_col]):
+        if not 0 <= current_col < len(board[current_row]):
             return positions
 
         positions.append(board[current_row][current_col])
